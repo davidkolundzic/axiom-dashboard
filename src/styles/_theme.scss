@@ -1,0 +1,44 @@
+:root {
+  --app-bg: #0b1120;
+  --app-surface: #111827;
+  --app-surface-2: #0f172a;
+  --app-border: #243041;
+  --app-text: #e5e7eb;
+  --app-muted: #94a3b8;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+.app-surface {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 1rem;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.page-subtitle {
+  color: var(--app-muted);
+  margin-bottom: 0;
+}
+
+.section-label {
+  color: var(--app-muted);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}

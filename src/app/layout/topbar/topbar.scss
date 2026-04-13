@@ -1,0 +1,70 @@
+.app-top-bar {
+  height: var(--app-header-height, 76px);
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  border-bottom: 1px solid var(--app-border);
+  background: rgba(15, 23, 42, 0.78);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.top-bar-eyebrow {
+  color: var(--app-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.top-bar-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.top-bar-search {
+  min-width: 220px;
+  height: 42px;
+  padding: 0 0.9rem;
+  border: 1px solid var(--app-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.btn-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--app-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--app-text);
+}
+
+.user-chip {
+  height: 42px;
+  padding: 0 0.5rem 0 0.35rem;
+  border: 1px solid var(--app-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.user-chip__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(16, 185, 129, 0.25));
+}
+
+.user-chip__name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.user-chip__role {
+  font-size: 0.75rem;
+  color: var(--app-muted);
+}

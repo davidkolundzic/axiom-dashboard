@@ -1,0 +1,38 @@
+<header class="app-top-bar">
+  <div class="container-fluid px-3 px-lg-4 h-100">
+    <div class="d-flex align-items-center justify-content-between h-100 gap-3">
+      <div class="d-flex align-items-center gap-3">
+        <button
+          type="button"
+          class="btn btn-icon d-lg-none"
+          (click)="onMenuClick()" title="Toggle sidebar">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div>
+          <div class="top-bar-eyebrow">Workspace</div>
+          <div class="top-bar-title">Analytics Overview</div>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-2 gap-lg-3">
+        <div class="top-bar-search d-none d-md-flex align-items-center">
+          <i class="bi bi-search me-2"></i>
+          <span class="text-secondary">Search</span>
+        </div>
+
+        <button type="button" class="btn btn-icon" title="Notifications">
+          <i class="bi bi-bell"></i>
+        </button>
+
+        <div class="user-chip d-flex align-items-center gap-2">
+          <div class="user-chip__avatar">DK</div>
+          <div class="d-none d-md-block">
+            <div class="user-chip__name">David</div>
+            <div class="user-chip__role">Admin</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,61 @@
+.app-sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+  border-right: 1px solid var(--app-border);
+  color: var(--app-text);
+}
+
+.app-sidebar__brand {
+  height: var(--app-header-height, 76px);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(16, 185, 129, 0.14));
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  font-size: 1.1rem;
+  
+}
+
+.brand-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.brand-subtitle,
+.sidebar-section-label {
+  color: var(--app-muted);
+  font-size: 0.8rem;
+}
+
+.sidebar-section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sidebar-link {
+  color: #cbd5e1;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 0.875rem 1rem;
+  margin-bottom: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(148, 163, 184, 0.12);
+  color: #fff;
+}
+
+.sidebar-link.is-active {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.16), rgba(59, 130, 246, 0.08));
+  border-color: rgba(59, 130, 246, 0.28);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.18);
+}
