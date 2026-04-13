@@ -17,7 +17,12 @@ export class SidebarComponent {
 
   // Inject the navigation items from the configuration 
   // this will be an array of AppNavItem objects defined in app-nav.config.ts
-  readonly navItems: AppNavItem[] = inject(APP_NAV_ITEMS);
+  readonly #navItems: AppNavItem[] = inject(APP_NAV_ITEMS);
+
+  get navItems(): AppNavItem[] {
+    // Filter the navigation items to include only those that are active
+    return this.#navItems.filter(item => item.active);
+  }
 
   onNavigate() {
     this.navigate.emit();

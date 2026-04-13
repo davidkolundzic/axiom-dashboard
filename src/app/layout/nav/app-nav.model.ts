@@ -6,4 +6,5 @@ export interface AppNavItem {
     route: AppRoute;
     exact?: boolean;
     badge?: string;
+    active?: boolean;
 }
