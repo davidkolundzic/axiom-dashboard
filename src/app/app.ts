@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { DashboardShellComponent } from './layout/dashboard-shell/dashboard-shell';
+import { ThemeService } from '@layout/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,10 @@ import { DashboardShellComponent } from './layout/dashboard-shell/dashboard-shel
 })
 export class App {
   protected readonly title = signal('axiom-dashboard');
+  readonly themeService = inject(ThemeService);
+
+  constructor() {    
+    this.themeService.initTheme();
+  }
+
 }

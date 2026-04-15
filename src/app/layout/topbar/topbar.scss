@@ -1,16 +1,86 @@
 .app-top-bar {
+  --app-topbar-glass-blur-local: var(--app-topbar-glass-blur);
+  --app-topbar-glass-saturate-local: var(--app-topbar-glass-saturate);
+  --app-topbar-glass-shadow-local: var(--app-topbar-glass-shadow);
+
   height: var(--app-header-height, 76px);
   position: sticky;
   top: 0;
   z-index: 1020;
-  border-bottom: 1px solid var(--app-border);
-  background: rgba(15, 23, 42, 0.78);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--app-topbar-border);
+  background: var(--app-topbar-bg);
+  color: var(--app-topbar-text);
+  box-shadow: var(--app-topbar-glass-shadow-local);
+  -webkit-backdrop-filter: saturate(var(--app-topbar-glass-saturate-local)) blur(var(--app-topbar-glass-blur-local));
+  backdrop-filter: saturate(var(--app-topbar-glass-saturate-local)) blur(var(--app-topbar-glass-blur-local));
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: var(--app-topbar-glass-highlight);
+    opacity: 0.85;
+  }
+}
+
+:host-context([data-theme='light']) .app-top-bar.glass-soft {
+  --app-topbar-glass-blur-local: 6px;
+  --app-topbar-glass-saturate-local: 112%;
+  --app-topbar-glass-shadow-local: 0 4px 14px rgb(var(--dash-shadow-rgb) / 0.08);
+}
+
+:host-context([data-theme='light']) .app-top-bar.glass-medium {
+  --app-topbar-glass-blur-local: var(--app-topbar-glass-blur);
+  --app-topbar-glass-saturate-local: var(--app-topbar-glass-saturate);
+  --app-topbar-glass-shadow-local: var(--app-topbar-glass-shadow);
+}
+
+:host-context([data-theme='light']) .app-top-bar.glass-strong {
+  --app-topbar-glass-blur-local: 14px;
+  --app-topbar-glass-saturate-local: 155%;
+  --app-topbar-glass-shadow-local: 0 12px 28px rgb(var(--dash-shadow-rgb) / 0.18);
+}
+
+.app-top-bar__inner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding-inline: 1rem;
+
+  @media (min-width: 992px) {
+    padding-inline: 1.5rem;
+  }
+}
+
+.app-top-bar__row {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.app-top-bar__left,
+.app-top-bar__right {
+  display: flex;
+  align-items: center;
+}
+
+.app-top-bar__left {
+  gap: 0.75rem;
+}
+
+.app-top-bar__right {
+  gap: 0.5rem;
+
+  @media (min-width: 992px) {
+    gap: 0.75rem;
+  }
 }
 
 .top-bar-eyebrow {
-  color: var(--app-muted);
+  color: var(--app-topbar-muted);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -25,26 +95,43 @@
   min-width: 220px;
   height: 42px;
   padding: 0 0.9rem;
-  border: 1px solid var(--app-border);
+  border: 1px solid var(--app-topbar-border);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--app-topbar-surface);
+
+  &.top-bar-search--hidden {
+    display: none !important;
+  }
 }
 
 .btn-icon {
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  border: 1px solid var(--app-border);
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--app-text);
+  border: 1px solid var(--app-topbar-border);
+  background: var(--app-topbar-surface);
+  color: var(--app-topbar-text);
+  transition: background-color 120ms ease, border-color 120ms ease;
+
+  &:hover {
+    background: var(--app-topbar-surface-hover);
+    border-color: var(--app-topbar-border-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--app-topbar-focus-ring);
+    outline-offset: 2px;
+  }
 }
 
 .user-chip {
   height: 42px;
-  padding: 0 0.5rem 0 0.35rem;
-  border: 1px solid var(--app-border);
+  padding: 0 0.65rem 0 0.45rem;
+  border: 1px solid var(--app-topbar-border);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--app-topbar-surface);
+  min-width: 120px;
+  gap: 0.5rem;
 }
 
 .user-chip__avatar {
@@ -56,7 +143,7 @@
   justify-content: center;
   font-size: 0.75rem;
   font-weight: 700;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(16, 185, 129, 0.25));
+  background: var(--app-topbar-avatar-gradient);
 }
 
 .user-chip__name {
@@ -66,5 +153,5 @@
 
 .user-chip__role {
   font-size: 0.75rem;
-  color: var(--app-muted);
+  color: var(--app-topbar-muted);
 }

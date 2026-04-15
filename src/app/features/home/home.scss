@@ -1,0 +1,15 @@
+.circle-list .list-group-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-left: 0;
+
+  &::before {
+    content: '';
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--app-accent, var(--app-border));
+  }
+}

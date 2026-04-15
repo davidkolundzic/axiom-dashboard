@@ -2,7 +2,7 @@ import { InjectionToken } from "@angular/core";
 import { AppNavItem } from "./app-nav.model";
 import { ROUTES } from "./app-routes.config";
 
-const _defaultNavItems: AppNavItem[] = [
+const _defaultNavItems = [
     {
         label: 'Home',
         icon: 'bi bi-house',
@@ -39,9 +39,9 @@ const _defaultNavItems: AppNavItem[] = [
         route: ROUTES.SETTINGS,
         active: true
     }
-] //as const // satisfies readonly AppNavItem[];
+] satisfies readonly AppNavItem[];
 
 export const APP_NAV_ITEMS= new InjectionToken< AppNavItem[]>('APP_NAV_ITEMS', {
     providedIn: 'root',
-    factory: () => _defaultNavItems
+    factory: () => _defaultNavItems 
 });

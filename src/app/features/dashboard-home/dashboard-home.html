@@ -1,44 +1,198 @@
-<div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3 mb-4">
-  <div>
-    <div class="section-label mb-2">Overview</div>
-    <h1 class="page-title">Video Summary</h1>
-    <p class="page-subtitle">
-      Review transcripts, summaries and key highlights in one place.
-    </p>
-  </div>
+<div class="dashboard-page">
+  <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3 mb-4">
+    <div>
+      <div class="section-label mb-2">Overview</div>
+      <h1 class="page-title">Business Dashboard</h1>
+      <p class="page-subtitle">
+        A reusable Angular dashboard starter for internal tools, fintech-style products and admin apps.
+      </p>
+    </div>
 
-  <div class="d-flex gap-2">
-    <button class="btn btn-outline-light">Export</button>
-    <button class="btn btn-primary">New Summary</button>
-  </div>
-</div>
+    <div class="d-flex flex-wrap gap-2">
+      <button class="btn btn-outline-light">
+        <i class="bi bi-download me-2"></i>
+        Export
+      </button>
 
-<div class="row g-3 mb-4">
-  <div class="col-12 col-md-6 col-xl-3">
-    <div class="app-surface p-3 p-lg-4">
-      <div class="text-secondary small mb-2">Sessions</div>
-      <div class="fs-3 fw-semibold">128</div>
+      <button class="btn btn-primary">
+        <i class="bi bi-plus-lg me-2"></i>
+        New Report
+      </button>
     </div>
   </div>
 
-  <div class="col-12 col-md-6 col-xl-3">
-    <div class="app-surface p-3 p-lg-4">
-      <div class="text-secondary small mb-2">Avg latency</div>
-      <div class="fs-3 fw-semibold">2.4s</div>
+  <div class="row g-3 mb-4">
+    @for (stat of stats(); track stat.label) {
+    <div class="col-12 col-md-6 col-xxl-3">
+      <div class="dashboard-card stat-card h-100 p-3 p-lg-4">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div>
+            <div class="stat-card__label">{{ stat.label }}</div>
+            <div class="stat-card__value">{{ stat.value }}</div>
+          </div>
+
+          <div class="stat-card__icon">
+            <i [class]="stat.icon"></i>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <span
+            class="delta-badge"
+            [class.delta-badge--positive]="stat.deltaPositive"
+            [class.delta-badge--negative]="!stat.deltaPositive">
+            {{ stat.delta }}
+          </span>
+
+          <span class="stat-card__meta">vs previous period</span>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+
+  <div class="row g-3 mb-4">
+    <div class="col-12 col-xl-8">
+      <div class="dashboard-card h-100 p-3 p-lg-4">
+        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
+          <div>
+            <div class="section-label mb-2">Performance</div>
+            <h2 class="panel-title mb-1">Platform Overview</h2>
+            <p class="panel-subtitle mb-0">
+              Starter dashboard area for KPIs, charts, trends or operational summaries.
+            </p>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn btn-sm btn-outline-light active">7D</button>
+            <button class="btn btn-sm btn-outline-light">30D</button>
+            <button class="btn btn-sm btn-outline-light">90D</button>
+          </div>
+        </div>
+
+        <div class="overview-hero mb-4">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="overview-metric p-3">
+                <div class="overview-metric__label">Success Rate</div>
+                <div class="overview-metric__value">98.4%</div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="overview-metric p-3">
+                <div class="overview-metric__label">Processed Items</div>
+                <div class="overview-metric__value">12,842</div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="overview-metric p-3">
+                <div class="overview-metric__label">Completion</div>
+                <div class="overview-metric__value">{{ completionRate() }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-placeholder">
+          <div class="chart-placeholder__grid"></div>
+          <div class="chart-placeholder__line"></div>
+          <div class="chart-placeholder__footer d-flex justify-content-between">
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+            <span>Sun</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-xl-4">
+      <div class="dashboard-card h-100 p-3 p-lg-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <div class="section-label mb-2">Activity</div>
+            <h2 class="panel-title mb-0">Recent Updates</h2>
+          </div>
+
+          <button class="btn btn-sm btn-outline-light">View all</button>
+        </div>
+
+        <div class="activity-list">
+          @for (item of activities(); track item.title) {
+          <div class="activity-item">
+            <div class="activity-item__icon">
+              <i [class]="item.icon"></i>
+            </div>
+
+            <div class="activity-item__content">
+              <div class="activity-item__title">{{ item.title }}</div>
+              <div class="activity-item__subtitle">{{ item.subtitle }}</div>
+            </div>
+
+            <div class="activity-item__time">{{ item.time }}</div>
+          </div>
+          }
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row g-3">
-  <div class="col-12 col-xl-8">
-    <div class="app-surface p-3 p-lg-4">
-      Large content card
+  <div class="dashboard-card p-3 p-lg-4">
+    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
+      <div>
+        <div class="section-label mb-2">Management</div>
+        <h2 class="panel-title mb-1">Recent Items</h2>
+        <p class="panel-subtitle mb-0">
+          Generic table block you can reuse for reports, orders, transactions, summaries or review queues.
+        </p>
+      </div>
+
+      <div class="d-flex flex-wrap gap-2">
+        <button class="btn btn-sm btn-outline-light">Filter</button>
+        <button class="btn btn-sm btn-outline-light">Sort</button>
+      </div>
     </div>
-  </div>
 
-  <div class="col-12 col-xl-4">
-    <div class="app-surface p-3 p-lg-4">
-      Secondary panel
+    <div class="table-responsive">
+      <table class="table table-borderless align-middle dashboard-table mb-0">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Updated</th>
+            <th>Owner</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (item of recentItems(); track item.name) {
+          <tr>
+            <td>
+              <div class="fw-semibold">{{ item.name }}</div>
+            </td>
+            <td>{{ item.category }}</td>
+            <td>
+              <span
+                class="status-pill"
+                [class.status-pill--active]="item.status === 'Active'"
+                [class.status-pill--pending]="item.status === 'Pending'"
+                [class.status-pill--review]="item.status === 'Review'"
+                [class.status-pill--completed]="item.status === 'Completed'">
+                {{ item.status }}
+              </span>
+            </td>
+            <td>{{ item.updatedAt }}</td>
+            <td>{{ item.owner }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
