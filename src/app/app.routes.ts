@@ -5,13 +5,14 @@ import { DashboardHomeComponent } from './features/dashboard-home/dashboard-home
 import { Home } from './features/home/home';
 import { VideoSummaryComponent } from './features/video-summary/video-summary';
 import { SettingsComponent } from './features/settings/settings';
+import { Dashboard } from '@features/dashboard/dashboard/dashboard';
 
 export const routes: Routes = [
     {
         path: '',         
         children: [
             { path: '', redirectTo: toRoutePath(ROUTES.HOME), pathMatch: 'full' },
-            { path: toRoutePath(ROUTES.HOME), component:  Home },
+            { path: toRoutePath(ROUTES.HOME), component:  Dashboard },
             { path: toRoutePath(ROUTES.DASHBOARD), component:  DashboardHomeComponent },
             { path: toRoutePath(ROUTES.VIDEO_SUMMARY), component: VideoSummaryComponent },
             { path: toRoutePath(ROUTES.VAT), redirectTo: '', pathMatch: 'full' },

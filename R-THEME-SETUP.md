@@ -5,21 +5,26 @@ Naravno, evo TODO liste spremne za copy/paste:
 - [x] Napraviti ThemeService u src/app/core/theme/theme.service.ts
 - [x] Uvesti tip teme `light | dark` i signal `theme`
 - [x] Dodati metode `initTheme`, `setTheme`, `toggleTheme`
-- [ ] U `initTheme` implementirati redosled: localStorage -> prefers-color-scheme -> fallback `dark`
-- [ ] U servisu sinhronizovati root atribute `data-theme` i `data-bs-theme`
-- [ ] U app.ts pozvati inicijalizaciju teme na startupu
-- [ ] U topbar.ts injektovati ThemeService i izloziti stanje/metode za UI
-- [ ] U topbar.html dodati theme toggle dugme
-- [ ] Dodati `aria-label` i `title` koji se menjaju po temi (Switch to light/dark)
-- [ ] Dodati ikonice za stanje teme (sun/moon)
-- [ ] Proveriti da light-only glass pravilo na topbaru ostaje aktivno (light da, dark ne) u topbar.scss
-- [ ] Proveriti da su tokeni uskladjeni u _theme.scss
-- [ ] Pokrenuti build: `npm run build`
-- [ ] Manual test: toggle radi bez reload-a
-- [ ] Manual test: refresh cuva temu iz localStorage
-- [ ] Manual test: Bootstrap prati `data-bs-theme`
+- [x] U `initTheme` implementirati redosled: localStorage -> prefers-color-scheme -> fallback `dark`
+- [x] U servisu sinhronizovati root atribute `data-theme` i `data-bs-theme`
+- [x] U app.ts pozvati inicijalizaciju teme na startupu
+- [x] U topbar.ts injektovati ThemeService i izloziti stanje/metode za UI
+- [x] U topbar.html dodati theme toggle dugme
+- [x] Dodati `aria-label` i `title` koji se menjaju po temi (Switch to light/dark)
+- [x] Dodati ikonice za stanje teme (sun/moon)
+- [x] Proveriti da light-only glass pravilo na topbaru ostaje aktivno (light da, dark ne) u topbar.scss
+- [x] Proveriti da su tokeni uskladjeni u _theme.scss
+- [x] Pokrenuti build: `npm run build`
+- [x] Manual test: toggle radi bez reload-a
+- [x] Manual test: refresh cuva temu iz localStorage
+- [x] Manual test: Bootstrap prati `data-bs-theme`
 
-Ako hoces, mogu odmah i “dev TODO” verziju sa procenom trajanja po stavkama (15m, 30m, itd.).
+## TODO implement MSW
+
+- [ ] Add MSW
+- [ ] npm install msw --save-dev
+- [ ] Add http
+- [ ] npx msw init ./public --save
 
 ## TODO for AI Video Workspace
 

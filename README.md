@@ -1,59 +1,124 @@
-# AxiomDashboard
+```md
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+🔗 Live demo: (ako budeš deployao)
+🔗 GitHub: (repo link)
 
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+# Axiom Dashboard (Angular 21)
 
-## Code scaffolding
+Modern Angular dashboard showcasing scalable frontend architecture for enterprise applications.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
+## ✨ Overview
+
+Axiom Dashboard is a frontend-focused Angular application designed to demonstrate how to structure, scale and maintain complex UI systems.
+
+The project focuses on clean architecture, performance, and developer experience — similar to real-world SaaS platforms.
+
+---
+
+## 🧱 Tech Stack
+
+- Angular (standalone components, signals-ready architecture)
+- TypeScript
+- RxJS
+- SCSS (design tokens, theming)
+- Bootstrap 5
+- Mock API (simulated async data)
+
+---
+
+## 🏗️ Architecture
+
+The project follows a scalable, feature-driven structure:
+src/app/
+core/
+layout/
+shared/
+domain/
+features/
+
+### Key principles:
+
+- Feature-based module organization
+- Domain-driven models
+- Service → Store → Component separation
+- Thin components, logic handled in store/services
+- Reusable UI components
+
+---
+
+## 📊 Features
+
+- Dashboard with stats and activity feed
+- Project overview module
+- Video Summary UI (AI-ready concept)
+- Mock data integration with simulated async flows
+- Responsive layout and reusable UI patterns
+
+---
+
+## ⚡ Performance
+
+- Designed with performance in mind
+- Ready for OnPush change detection strategy
+- Lazy-load friendly architecture
+- Optimised rendering for scalable UI
+
+---
+
+## 🤖 AI-ready UI concept
+
+Includes a "Video Summary" feature that simulates an AI-driven workflow:
+
+- Transcript panel
+- Summary output
+- Loading state (AI processing simulation)
+
+This demonstrates how AI-powered features can be integrated into Angular applications.
+
+---
+
+## 🧪 Development Focus
+
+This project highlights:
+
+- Clean and maintainable code structure
+- Scalable frontend architecture
+- Separation of concerns
+- Real-world UI patterns (not tutorial-based)
+
+---
+
+## 🚀 Getting Started
+
+```
+npm install
+npm run start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🎯 Purpose
 
-```bash
-ng generate --help
-```
+This project was built to demonstrate how modern Angular applications should be structured in real-world scenarios — with focus on scalability, performance and maintainability.
 
-## Building
+---
 
-To build the project run:
+## 📌 Notes
 
-```bash
-ng build
-```
+This is a frontend architecture and UI-focused project. Backend/API is simulated to keep focus on frontend design patterns.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🟢 Status
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Actively developed and extended with new features and improvements.
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+👤 Author
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+David Kolundzic
+Frontend Developer (Angular • Enterprise Applications)
+Zagreb, Croatia

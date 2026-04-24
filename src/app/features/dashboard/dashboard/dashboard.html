@@ -1,0 +1,11 @@
+<p>dashboard works!</p>
+
+@if (loading()) {
+    <p>Loading projects...</p>
+} @else if (error()) {
+    <p>{{ error() }}</p>
+} @else {
+    <p>
+        {{ projects() | json }}
+    </p>
+}

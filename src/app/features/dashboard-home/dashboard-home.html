@@ -184,6 +184,10 @@
                 [class.status-pill--pending]="item.status === 'Pending'"
                 [class.status-pill--review]="item.status === 'Review'"
                 [class.status-pill--completed]="item.status === 'Completed'">
+                @if (item.status === 'Active') { <i class="bi bi-circle-fill me-1"></i> }
+                @if (item.status === 'Pending') { <i class="bi bi-clock me-1"></i> }
+                @if (item.status === 'Review') { <i class="bi bi-eye me-1"></i> }
+                @if (item.status === 'Completed') { <i class="bi bi-check-circle-fill me-1"></i> }
                 {{ item.status }}
               </span>
             </td>

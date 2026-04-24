@@ -8,8 +8,11 @@
     "types": [],
     "paths": {
       "@layout/*": ["./src/app/layout/*"],
-      "@shared/*": ["./src/app/shared"],
-      "@features/*": ["./src/app/features"]
+      "@shared/*": ["./src/app/shared/*"],
+      "@features/*": ["./src/app/features/*"],
+      "@domain": ["./src/app/domain/index.ts"],
+      "@domain/*": ["./src/app/domain/*"],
+      "@services/*": ["./src/app/services/*"],
     }
   },
   "include": [
